@@ -32,4 +32,6 @@ function removeFirstNotification(){
 // }
 // console.log(parolaGirata);
 
+// function palindromo(){
 
+// }
