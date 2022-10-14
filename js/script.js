@@ -27,20 +27,17 @@ const contenitoreRisultato = document.getElementById('contenitoreRisultato');
 
 function evento(){
 
-    function palindromo(inputstringValue, inputStringLength, parolaGirata, containerRisultatoHTML){
-        let (inputstringValue) = inputstring.value;
-        let (inputStringLength) = inputString.length;
-        let (parolaGirata) = (inputstringValue).split('').reverse().join('');
-    
-        if(parolaGirata == inputstringValue){
-            (containerRisultatoHTML).innerHTML = 'Questo è un palindromo: ' + (inputstringValue);
-        } else {
-            (containerRisultatoHTML).innerHTML = 'Questo non è un palindromo: ' + (inputstringValue);
-        }
-    }
-  verifica(parolaValue, parolaLen, parolaGirata, contenitoreRisultato)
-    
+        palindromo(parolaUser, contenitoreRisultato );
 }
-
 buttonVerifica.addEventListener('click', evento)
+
+
+// Pari e Dispari
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+// Sommiamo i due numeri
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+// Dichiariamo chi ha vinto.
+
+
 
