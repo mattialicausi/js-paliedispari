@@ -4,29 +4,12 @@
 //Chiedere all’utente di inserire una parola
 //Creare una funzione per capire se la parola inserita è palindroma
 
-//PROCEDIMENTO:
-// x creare input text (#parolaUser) in html e collegarlo in js 
-// x mettere in una variabile il (#parolaUser).value
-// x creare un bottone in html (#buttonVerifica) e collegarlo in js 
-// x assegnare un evento a #buttonVerifica
-// inserire una funzione (palindromo) all'interno di evento
-
-//FUNZIONE PALINDROMO
-// x mettere in una variabile (parolaValue) la parola inserita dall'utente
-// (parolaValue) prendere lunghezza, splittarla (parolaPali), girarla con reverse (parolaGirata)
-// creare ciclo for per unire le lettere
-// For (let i = parolaLen - 1; i >= 0; i--){ parolaGirata += parolaValue.charAt(i)};
-
-// if parola girata.value == parolaValue
-
-
 
 const parolaUser = document.getElementById('parolaUser');
 const buttonVerifica = document.getElementById('buttonVerifica');
 const contenitoreRisultato = document.getElementById('contenitoreRisultato');
 
 function evento(){
-
         palindromo(parolaUser, contenitoreRisultato );
 }
 buttonVerifica.addEventListener('click', evento)
@@ -39,5 +22,71 @@ buttonVerifica.addEventListener('click', evento)
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
+const buttonPari = document.getElementById('buttonPari');
+const buttonDispari = document.getElementById('buttonDispari');
+const numeroUser = document.getElementById('numeroUser');
+const contenitoreRisultato2 = document.getElementById('contenitoreRisultato2');
+let  contenitoreParieDispari = document.getElementById('contenitoreParieDispari');
+ 
 
+function pari() {
 
+const numeroUserV = parseInt(numeroUser.value);
+
+    //console.log('numero utente', numeroUserV);
+   
+
+    if(numeroUserV > 5 || numeroUserV < 1){
+        const divAlert = notificationError('Puoi inserire un numero solo tra 1 e 5!');
+        contenitoreParieDispari.prepend(divAlert);
+    } else{
+        removeFirstNotification()
+    }
+    
+    let randomN = randomNumber(1, 5);
+    const somma = numeroUserV + randomN;
+
+    isEven(somma);
+
+    if(isEven(somma) == false){
+        console.log('Hai perso, il numero è dispari');
+        contenitoreRisultato2.innerHTML = 'Il tuo numero: ' + numeroUserV + ' ' + 'Numero random: ' + randomN + ' ' + 'somma: ' + somma +  ' ' + 'Hai perso, il numero è dispari';
+        
+    } else{
+        console.log('Hai vinto, il numero è pari');
+        contenitoreRisultato2.innerHTML = 'Il tuo numero: ' + numeroUserV + ' ' + 'Numero random: ' + randomN + ' ' + 'somma: ' + somma +  ' ' + 'Hai vinto, il numero è pari';
+    }
+}
+ 
+
+buttonPari.addEventListener('click', pari);
+
+function dispari(){
+
+    const numeroUserV = parseInt(numeroUser.value);
+
+    //console.log('numero utente', numeroUserV);
+   
+
+    if(numeroUserV > 5 || numeroUserV < 1){
+        const divAlert = notificationError('Puoi inserire un numero solo tra 1 e 5!');
+        contenitoreParieDispari.prepend(divAlert);
+    } else{
+        removeFirstNotification()
+    }
+    
+    let randomN = randomNumber(1, 5);
+    const somma = numeroUserV + randomN;
+
+    isEven(somma);
+
+    if(isEven(somma) == true){
+        console.log('Hai vinto, il numero è pari');
+        contenitoreRisultato2.innerHTML = 'Il tuo numero: ' + numeroUserV + ' ' + 'Numero random: ' + randomN + ' ' + 'somma: ' + somma +  ' ' + 'Hai perso, il numero è pari';
+        
+    } else{
+        console.log('Hai perso, il numero è dispari');
+        contenitoreRisultato2.innerHTML = 'Il tuo numero: ' + numeroUserV + ' ' + 'Numero random: ' + randomN + ' ' + 'somma: ' + somma +  ' ' + 'Hai vinto, il numero è dispari';
+    }
+}
+buttonDispari.addEventListener('click', dispari);
