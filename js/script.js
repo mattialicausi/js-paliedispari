@@ -26,17 +26,19 @@ const buttonVerifica = document.getElementById('buttonVerifica');
 const contenitoreRisultato = document.getElementById('contenitoreRisultato');
 
 function evento(){
-    let parolaValue = parolaUser.value;
-    let parolaLen = parolaValue.length;
-    
-    let parolaGirata = parolaValue.split('').reverse().join('');
 
-        console.log(parolaGirata);
-    if(parolaGirata == parolaValue){
-        contenitoreRisultato.innerHTML = 'Questo è un palindromo: ' + parolaValue;
-    } else{
-        contenitoreRisultato.innerHTML = 'Questo  non è un palindromo: ' + parolaValue;
+    function palindromo(inputstringValue, inputStringLength, parolaGirata, containerRisultatoHTML){
+        let (inputstringValue) = inputstring.value;
+        let (inputStringLength) = inputString.length;
+        let (parolaGirata) = (inputstringValue).split('').reverse().join('');
+    
+        if(parolaGirata == inputstringValue){
+            (containerRisultatoHTML).innerHTML = 'Questo è un palindromo: ' + (inputstringValue);
+        } else {
+            (containerRisultatoHTML).innerHTML = 'Questo non è un palindromo: ' + (inputstringValue);
+        }
     }
+  verifica(parolaValue, parolaLen, parolaGirata, contenitoreRisultato)
     
 }
 

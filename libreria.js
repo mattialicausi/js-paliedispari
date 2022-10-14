@@ -32,6 +32,26 @@ function removeFirstNotification(){
 // }
 // console.log(parolaGirata);
 
-// function palindromo(){
+function palindromo(inputstringValue, inputStringLength, parolaGirata, containerRisultatoHTML){
+    let (inputstringValue) = inputstring.value;
+    let (inputStringLength) = inputString.length;
+    let (parolaGirata) = (inputstringValue).split('').reverse().join('');
 
+    if(parolaGirata == inputstringValue){
+        (containerRisultatoHTML).innerHTML = 'Questo è un palindromo: ' + (inputstringValue);
+    } else {
+        (containerRisultatoHTML).innerHTML = 'Questo non è un palindromo: ' + (inputstringValue);
+    }
+}
+
+// let parolaValue = parolaUser.value;
+// let parolaLen = parolaValue.length;
+
+// let parolaGirata = parolaValue.split('').reverse().join('');
+
+// if(parolaGirata == parolaValue){
+//     contenitoreRisultato.innerHTML = 'Questo è un palindromo: ' + parolaValue;
+// } else{
+//     contenitoreRisultato.innerHTML = 'Questo  non è un palindromo: ' + parolaValue;
 // }
+
